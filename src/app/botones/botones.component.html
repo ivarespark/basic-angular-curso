@@ -1,28 +1,10 @@
 <div>
-    <button [class.disabled]="button_disabled" class="btn btn-danger" (click)="texto_color = 'text-danger'">Color rojo</button>
-    <button [class.disabled]="button_disabled" class="btn btn-success mx-2" (click)="texto_color = 'text-success'">Color verde</button>
-    <button [class.disabled]="button_disabled" class="btn btn-primary" (click)="texto_color = 'text-primary'">Color azul</button>
-</div>
-<br>
-<div>
-    <!-- Enlace de clases -->
-    <button [ngClass]="{
-        'disabled':button_disabled,
-        'btn':true,
-        'btn-danger':true
-    }" class="btn btn-danger" (click)="texto_color = 'text-danger'">Color rojo</button>
-    <button [ngClass]="{
-        'disabled':button_disabled
-    }" class="btn btn-success mx-2" (click)="texto_color = 'text-success'">Color verde</button>
-    <button [ngClass]="{
-        'disabled':button_disabled
-    }" class="btn btn-primary" (click)="texto_color = 'text-primary'">Color azul</button>
+    <button class="btn btn-primary" (click)="src = 'https://images.pexels.com/photos/17411073/pexels-photo-17411073/free-photo-of-blanco-y-negro-planta-trigo-enfoque-selectivo.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load'">
+        Imagen arbol
+    </button>
+    <button class="btn btn-danger" (click)="src = 'https://images.pexels.com/photos/14534046/pexels-photo-14534046.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load'">
+        imagen ventana
+    </button>
 </div>
 
-
-
-<p [class]="texto_color">Texto que va a cambiar de color</p>
-
-<button class="btn btn-secondary" (click)="button_disabled = !button_disabled">
-    Activar/Desactivar
-</button>
+<img [src]="src" alt="">

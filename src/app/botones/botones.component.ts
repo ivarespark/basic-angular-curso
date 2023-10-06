@@ -12,8 +12,6 @@ export class BotonesComponent implements OnInit{
   ngOnInit(): void {    
   }
 
-  // Declaro propiedad
-  texto_color:String = '';
-  button_disabled:boolean = false;
+  src: string = 'https://images.pexels.com/photos/17411073/pexels-photo-17411073/free-photo-of-blanco-y-negro-planta-trigo-enfoque-selectivo.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load';
 
 }
