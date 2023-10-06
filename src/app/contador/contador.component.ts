@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Persona } from '../persona';
 
 @Component({
@@ -7,15 +7,21 @@ import { Persona } from '../persona';
   styleUrls: ['./contador.component.css']
 })
 
-export class ContadorComponent {
+export class ContadorComponent implements OnInit {
 
-  nombre = "Ivan";
-  apellido:String = "Espinosa"; // declaro tipo de variable String
+  constructor() { }
 
-  // Declaro objeto de tipo Persona(interface)
-  persona:Persona = {
-    nombre: "Ivan",
-    apellido: "Espinosa",
-    edad: 34
+  ngOnInit(): void {
+      
+  } 
+  
+  numero: number = 1;
+
+  decrementar() {
+    this.numero--;
+  }
+
+  incrementar() {
+    this.numero++;
   }
 }
