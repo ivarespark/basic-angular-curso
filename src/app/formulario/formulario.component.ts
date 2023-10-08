@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent implements OnInit {
+  
+  openAlert: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -13,6 +16,7 @@ export class FormularioComponent implements OnInit {
   }
 
   mostrarEnConsola(name: string){
+    this.openAlert = true;
     alert(name);
   }
 
