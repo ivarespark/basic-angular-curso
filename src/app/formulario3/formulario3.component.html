@@ -1,0 +1,39 @@
+<h3>Formulario reactivo</h3>
+<div class="card">
+    <div class="card-body">
+        <form>
+            <div class="mb-2">
+                <label class="form-label">Nombre</label>
+                <input type="text" [formControl]="name" class="form-control" placeholder="Ingresa tu nombre">
+                <div class="alert alert-danger mt-2" [hidden]="name.valid || name.pristine"> 
+                    <!-- [hiden] hace que se oculte si valid es TRUE o cuando no se haya escrito nada aun (pristine) -->
+                    Este campo es obligatorio
+                </div>
+            </div>
+            <div class="mb-2">
+                <label class="form-label">Email</label>
+                <input type="text" [formControl]="email" class="form-control" placeholder="Ingresa tu email">
+                <!-- [hiden] hace que se oculte si valid es TRUE o cuando no se haya escrito nada aun (pristine) -->
+                <div class="alert alert-danger mt-2" [hidden]="email.valid || email.pristine"> 
+                    <!-- ?. verifica que el array ERRORS contiene un indice llamado required y me muestra el valor TRUE o FALSE -->
+                    <span *ngIf="email.errors?.['required']"> 
+                        Este campo es obligatorio
+                    </span>
+                    <!-- ?. verifica que el array ERRORS contiene un indice llamado email(válido) y me muestra el valor TRUE o FALSE -->
+                    <span *ngIf="email.errors?.['email']">
+                        Debes ingresar un email valido
+                    </span>
+                </div>
+            </div>
+            <button class="btn btn-primary">Enviar</button>
+            
+        </form>
+        
+    </div>
+</div>
+
+{{ name.value | json }}
+<br>
+{{ email.value | json }}
+<br>
+{{ email.errors | json }}
