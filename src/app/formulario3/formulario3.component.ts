@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, Validators, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-formulario3',
@@ -8,6 +8,16 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class Formulario3Component {
 
-  name = new FormControl('',Validators.required);
-  email = new FormControl('',[Validators.required, Validators.email]); 
+  // CRear GETTERS 
+  get name(){ return this.formUser.get('name') as FormControl; }
+  get email(){ return this.formUser.get('email') as FormControl; }
+
+  formUser = new FormGroup({
+    'name': new FormControl('',Validators.required),
+    'email': new FormControl('',[Validators.required, Validators.email])
+  });
+
+  procesar() {
+    alert(this.formUser.get('name')?.value + ' ' + this.formUser.get('email')?.value);
+  }
 }
