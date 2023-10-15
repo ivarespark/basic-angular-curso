@@ -1,15 +1,9 @@
 
 <div class="container mt-4">
-    <h2>Componente padre</h2>
-    <input type="text" class="form-control" [(ngModel)]="title" /> <!-- si se modifica el title desde aqui se modifican padres e hijos-->
+    <h2>Servicios</h2>
+    
+    <app-add-messages></app-add-messages> 
 
-    <!-- se interpreta que cuando se coloca [] lo que se quiere es pasar el contenido de la variable title-->
-    <!--
-    <app-children [title]="title" (titleChange)="title = $event" ></app-children>
-    -->
-    <!-- $event hace referencia al nuevo valor que trae del HIJO -->
-
-    <!-- Si se coloca todo con title, se puede usar lo siguiente (hace lo mismo que el de arriba -->
-    <app-children [(title)]="title"></app-children> 
+    <app-list-messages></app-list-messages>
 
 </div>
