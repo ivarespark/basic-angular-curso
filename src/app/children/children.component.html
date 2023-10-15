@@ -1,5 +1,5 @@
-<p>children works!</p>
+<h2 class="mt-4">Componente hijo</h2>
 
 {{ title }}
 
-<input type="text" class="form-control" [(ngModel)]="title" /> <!-- si se cambia aquí, el cambio solo es en el hijo -->
+<input type="text" class="form-control" (keyup)="emitTitleChange()" [(ngModel)]="title" /> <!-- si se cambia aquí, el cambio solo es en el hijo -->
